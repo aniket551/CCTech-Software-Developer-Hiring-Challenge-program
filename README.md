@@ -1,1 +1,24 @@
 # CCTech-Software-Developer-Hiring-Challenge-program
+
+1)1st program
+1)point(x,y),polygon[]
+each function call prev function--return type boolen(t or f)
+2) 1)online()--there are two point a,b.the p point lise between(a,b) are polygon
+   2)direction()--point p lise on the edge of polygon or not 
+   3)intersect()-- intersect also retuen type of boolean
+         its true if our point intersects with the point of polygon that
+is line drawn from thepoint intersect if it is intersect with another point of polygon
+   4)insise()-- point is inside or not
+     n<3(polygon always have min 3 point)(T or F)
+   --take extream point right which has the max value arbitary large number
+     and point extream will also be used in finding out return value of intersect() function.
+    loop use do while loop 
+         next = (i + 1) % poly_limit; 
+         so that i get one point i an next point  after i of the polygon
+       if intersect() 4 point(polygon[i], polygon[next], p, extreme) test true
+        if direction(polygon[i], p, polygon[next]) == 0) 
+		return  onLine(polygon[i], p, 
+                                     polygon[next]); 
+       
+     increase count parameter count++.close do while loop, i become next.
+              unless while(i!=0).count is odd number point lies inside.

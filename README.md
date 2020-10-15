@@ -1,6 +1,4 @@
 # CCTech-Software-Developer-Hiring-Challenge-program
-Program 1 : Check if the given point lies inside or outside a polygon?
-
 package program1;
 
 import program1.polygon.Point;
@@ -43,11 +41,11 @@ public class polygon {
         else if(val < 0)
             return 2;          
             return 1;      
-    }    
+    }
+    
 	public static boolean intersect(Point a1, Point b1,  
 		            Point a2, Point b2)  
 		{ 
-		//dircetion case
 		double case1 = direction(a1, b1, a2); 
 		double case2 = direction(a1, b1, b2); 
 		double case3 = direction(a2, b2, a1); 
@@ -56,8 +54,7 @@ public class polygon {
 		if (case1 != case2 && case3 != case4) 
 		{ 
 		return true; 
-		} 
-				
+		} 		
 		if (case1 == 0 && onLine(a1, a2, b1))  
 		{ 
 		return true; 
@@ -66,31 +63,27 @@ public class polygon {
 		if (case2 == 0 && onLine(a1, b2, b1))  
 		{ 
 		return true; 
-		} 
-				
+		} 		
 		if (case3 == 0 && onLine(a2, a1, b2)) 
 		{ 
 		return true; 
-		} 
-		
+		} 		
 		if (case4 == 0 && onLine(a2, b1, b2)) 
 		{ 
 		return true; 
-		} 
-		
+		} 		
 		return false;  
-	} 
-	
+	} 	
    static boolean inside(Point polygon[], int poly_limit, Point p) 
-          {      
-             if (poly_limit < 3)  
-              { 
-                return false; 
-              } 
+        { 
+        
+        if (poly_limit < 3)  
+        { 
+            return false; 
+        }   
+        Point extreme = new Point(range, p.y_coordinate); 
   
-         Point extreme = new Point(range, p.y_coordinate); 
-  
-          int count = 0, i = 0; 
+        int count = 0, i = 0; 
         do 
         { 
             int next = (i + 1) % poly_limit; 
@@ -102,12 +95,10 @@ public class polygon {
                     return  onLine(polygon[i], p, 
                                      polygon[next]); 
                 } 
-  
                 count++; 
             } 
             i = next; 
-        } while (i != 0); 
-  
+        } while (i != 0);   
         return (count % 2 == 1); 
     } 	
 	public static void main(String[] args) {
@@ -127,8 +118,7 @@ public class polygon {
 	        else 
 	        { 
 	            System.out.println("False-->Outsie the polygon"); 
-	        } 
-		 
+	        } 		 
 		 Point polygon_test2[] = {new Point(-3, 2), 
 	                new Point(-2, -0.8),  
 	                new Point(0, 1.2),  
@@ -143,10 +133,8 @@ public class polygon {
 		        }  
 		        else 
 		        { 
-		            System.out.println("False-->Outsie the polygon"); 
-		        } 
-
-	}
-		
+		            System.out.println("False-->Outsie the polygon"); 		        
+			} 
+	}		
 }
 
